@@ -243,10 +243,6 @@ async function refreshEffectiveVip() {
 
 function openKlineChart(row) {
   refreshEffectiveVip().then(() => {
-    if (vipLevel.value < 2) {
-      message.warning('查看K线仅限VIP2及以上用户使用')
-      return
-    }
     klineStockCode.value = toEastMoneyCode(row.StockCode)
     klineStockName.value = row.StockName || ''
     showKlineModal.value = true
