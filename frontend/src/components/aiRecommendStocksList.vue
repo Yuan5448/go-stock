@@ -14,7 +14,7 @@ import sparkLine from "./stockSparkLine.vue"
 import {format} from "date-fns";
 
 const notify = useNotification()
-const vipLevel=ref("");
+const vipLevel=ref("99");
 const vipStartTime=ref("");
 const vipEndTime=ref("");
 const expired=ref(false)
@@ -41,7 +41,7 @@ onBeforeMount(()=> {
     }else{
       //notify.success({content: '未开通VIP'})
     }
-    isValidVip.value = !(vipLevel.value === "" || Number(vipLevel.value) <= 0);
+    isValidVip.value = true;
   })
 })
 onMounted(() => {
@@ -440,10 +440,6 @@ function recommendRangeToSinglePrice(p) {
 }
 
 function showDetail(row) {
-  if(vipLevel.value===""|| Number(vipLevel.value) <=0){
-    notify.warning({content: '未开通VIP或者已经过期'})
-    return
-  }
   modalDataRef.title = row.stockName
   modalDataRef.content = row.recommendReason
   modalDataRef.riskRemarks = row.riskRemarks
