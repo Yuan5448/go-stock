@@ -1177,8 +1177,8 @@ func GetAllDataTools() []tool.BaseTool {
 				Required: true,
 			},
 			"stockCodes": {
-				Type:     "array",
-				Desc:     "可选，多只股票代码列表",
+				Type:     "string",
+				Desc:     "可选，多只股票代码列表，用英文逗号分隔",
 				Required: false,
 			},
 		},
@@ -1239,8 +1239,8 @@ func GetAllDataTools() []tool.BaseTool {
 				Required: true,
 			},
 			"stockCodes": {
-				Type:     "array",
-				Desc:     "可选，多只股票代码列表",
+				Type:     "string",
+				Desc:     "可选，多只股票代码列表，用英文逗号分隔",
 				Required: false,
 			},
 			"kLineType": {
@@ -1297,8 +1297,8 @@ func GetAllDataTools() []tool.BaseTool {
 				Required: true,
 			},
 			"stockCodes": {
-				Type:     "array",
-				Desc:     "可选，多只股票代码列表",
+				Type:     "string",
+				Desc:     "可选，多只股票代码列表，用英文逗号分隔",
 				Required: false,
 			},
 			"kLineType": {
@@ -1447,8 +1447,8 @@ func GetAllDataTools() []tool.BaseTool {
 		"批量创建/保存AI推荐股票记录，建议每次批量保存5条记录",
 		map[string]*schema.ParameterInfo{
 			"stocks": {
-				Type:     "array",
-				Desc:     "股票推荐列表",
+				Type:     "string",
+				Desc:     "股票推荐列表，JSON数组格式字符串",
 				Required: true,
 				ElemInfo: &schema.ParameterInfo{
 					Type:     "object",
