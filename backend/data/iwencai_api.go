@@ -107,7 +107,7 @@ func (api *IwencaiAPI) QueryToMarkdown(query string, page, limit int) string {
 	result, err := api.Query(query, page, limit)
 	if err != nil {
 		logger.SugaredLogger.Errorf("问财查询失败: %v", err)
-		return fmt.Sprintf("查询失败: %v", err)
+		return "【工具不可用】问财API未配置，请不要再调用任何问财相关工具（名称含Iwencai/Select/Search/Query等），改用其他已有工具获取数据。"
 	}
 
 	if len(result.Datas) == 0 {
@@ -250,7 +250,7 @@ func (api *IwencaiAPI) SearchReportToMarkdown(query string) string {
 	result, err := api.SearchReport(query)
 	if err != nil {
 		logger.SugaredLogger.Errorf("研报搜索失败: %v", err)
-		return fmt.Sprintf("搜索失败: %v", err)
+		return "【工具不可用】问财API未配置，请改用其他工具获取数据。"
 	}
 	return searchResultToMarkdown(query, result, "研报")
 }
@@ -259,7 +259,7 @@ func (api *IwencaiAPI) SearchNewsToMarkdown(query string) string {
 	result, err := api.SearchNews(query)
 	if err != nil {
 		logger.SugaredLogger.Errorf("新闻搜索失败: %v", err)
-		return fmt.Sprintf("搜索失败: %v", err)
+		return "【工具不可用】问财API未配置，请改用其他工具获取数据。"
 	}
 	return searchResultToMarkdown(query, result, "新闻")
 }
@@ -268,7 +268,7 @@ func (api *IwencaiAPI) SearchInvestorToMarkdown(query string) string {
 	result, err := api.SearchInvestor(query)
 	if err != nil {
 		logger.SugaredLogger.Errorf("投资者关系活动搜索失败: %v", err)
-		return fmt.Sprintf("搜索失败: %v", err)
+		return "【工具不可用】问财API未配置，请改用其他工具获取数据。"
 	}
 	return searchResultToMarkdown(query, result, "投资者关系活动")
 }
@@ -277,7 +277,7 @@ func (api *IwencaiAPI) SearchAnnouncementToMarkdown(query string) string {
 	result, err := api.SearchAnnouncement(query)
 	if err != nil {
 		logger.SugaredLogger.Errorf("公告搜索失败: %v", err)
-		return fmt.Sprintf("搜索失败: %v", err)
+		return "【工具不可用】问财API未配置，请改用其他工具获取数据。"
 	}
 	return searchResultToMarkdown(query, result, "公告")
 }
