@@ -320,7 +320,6 @@ func createChatModel(ctx context.Context, aiConfig data.AIConfig) (model.ToolCal
 			APIKey:      aiConfig.ApiKey,
 			Timeout:     timeout,
 			MaxTokens:   &maxTok,
-			Temperature: &temperature,
 			ExtraFields: extraFields,
 		}
 		if httpClient != nil {
