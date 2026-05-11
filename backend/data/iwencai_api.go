@@ -63,7 +63,7 @@ type IwencaiResponse struct {
 func (api *IwencaiAPI) Query(query string, page, limit int) (*IwencaiResponse, error) {
 	apiKey := api.config.Settings.IwencaiApiKey
 	if apiKey == "" {
-		return nil, fmt.Errorf("同花顺问财API密钥未配置，请在设置中填写IwencaiApiKey")
+		return nil, fmt.Errorf("问财API未配置，此工具不可用，请使用其他工具获取数据")
 	}
 
 	if page <= 0 {
@@ -172,7 +172,7 @@ type IwencaiSearchItem struct {
 func (api *IwencaiAPI) searchComprehensive(channel string, query string) (*IwencaiSearchResponse, error) {
 	apiKey := api.config.Settings.IwencaiApiKey
 	if apiKey == "" {
-		return nil, fmt.Errorf("同花顺问财API密钥未配置，请在设置中填写IwencaiApiKey")
+		return nil, fmt.Errorf("问财API未配置，此工具不可用，请使用其他工具获取数据")
 	}
 
 	if query == "" {
